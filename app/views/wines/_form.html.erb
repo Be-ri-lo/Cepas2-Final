@@ -33,14 +33,14 @@
   <%= form.fields_for :enologist_wines do |f| %>
 
     <div class= "field">
+      <%= f.label :enologist %>
+      <%= f.select :enologist_id, @enologists %> 
       <%= f.label :score %>
       <%= f.number_field :score %> 
-    </div>  
+    </div> 
 
   <% end %>
-
-  <a href="/wines/get_wines_strains">Get Wine_strains</a> <!--Es un adelanto-->
-  
+ 
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -21,6 +21,9 @@ class WinesController < ApplicationController
     # @wine.wine_strains.build
     # @wine.wine_strains.build
     # @wine.wine_strains.build
+
+    @enologists = Enologist.order('age DESC').pluck(:name, :id)
+    1.times {@wine.enologist_wines.build}
     
   end
 
@@ -28,7 +31,7 @@ class WinesController < ApplicationController
   def edit
     @strains = Strain.available.pluck(:name, :id)  #repasar, los botones de build, es para dar mas de una seleccion
     3.times { @wine.wine_strains.build }  
-    @enologists = Enologist.pluck(:name, :id).include?(:age)
+    @enologists = Enologist.order('age DESC').pluck(:name, :id)
 
     #para que aparesca el score en edit
     @wine.enologist_wines.build

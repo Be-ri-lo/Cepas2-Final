@@ -20,7 +20,7 @@
         <td><%= wine.id %></td>
         <td><%= wine.name %></td>
         <td><%= sort_strains wine.wine_strains %></td>
-        <td><%= wine.enologist_wines.map(&:score).join(',') %></td>
+        <td><%= sort_enologist wine.enologist_wines %></td>
         <td><%= link_to 'Show', wine %></td>
         <td><%= link_to 'Score', new_enologist_wine_path %>                    
         

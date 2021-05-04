@@ -13,6 +13,8 @@ class EnologistWinesController < ApplicationController
   # GET /enologist_wines/new
   def new
     @enologist_wine = EnologistWine.new
+    @wines = Wine.all.pluck(:name, :id)
+    @enologists = Enologist.all.pluck(:name, :id)
   end
 
   # GET /enologist_wines/1/edit

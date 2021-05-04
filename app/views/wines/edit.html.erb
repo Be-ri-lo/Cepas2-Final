@@ -2,31 +2,5 @@
 
 <%= render 'form', wine: @wine %>
 
-<p> Scores: 
-    <% @wine.enologist_wines.each do |wine| %>
-        <%= wine.enologist%>
-    <% end %>
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Enologists:</th>
-      <th>Age</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-     <% @wine.enologist_wines.each do |wine| %>
-      <tr>
-        <td><%= wine.enologist %></td>
-        <td><%= wine.enologist %></td> <!--Pendiente de agregar edad-->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-      
-
 <%= link_to 'Show', @wine %> |
 <%= link_to 'Back', wines_path %>

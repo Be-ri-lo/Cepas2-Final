@@ -6,4 +6,8 @@ module WinesHelper
                     .join( ', ')  
     end
     
+
+    def sort_enologist(wine_enologists)
+        wine_enologists.map {|wo| "#{wo.enologist.name} (#{wo.score}%)"}.sort.join(', ')
+    end
 end

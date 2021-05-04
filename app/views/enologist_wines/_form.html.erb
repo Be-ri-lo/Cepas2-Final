@@ -16,19 +16,20 @@
     <%= form.number_field :score %>
   </div>
 
+
   <div class="field">
     <%= form.label :wine_id %>
-    <%= form.text_field :wine_id %>
+    <%= form.select :wine_id, @wines %>
   </div>
 
   <div class="field">
     <%= form.label :enologist_id %>
-    <%= form.text_field :enologist_id %>
+    <%= form.select :enologist_id, @enologists %>
   </div>
-
-
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+
